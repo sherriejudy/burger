@@ -1,5 +1,4 @@
 # Node-Express-Handlebars
-# Burgers!!
 Deployed app --> [Burgers](url)
 # Purpose 
 The purpose of the "Burgers!!" app is to demonstrate the ability of this developer to produce a full-stack web-application served via an Express framework. 
