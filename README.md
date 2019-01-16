@@ -1,9 +1,7 @@
 # Node-Express-Handlebars
 Deployed app --> [Burgers](url)
-# Purpose 
-The purpose of the "Burgers!!" app is to demonstrate the ability of this developer to produce a full-stack web-application served via an Express framework. 
-# MVC 
-The app is built according to the Model-View-Controller architecture of application development. 
+
+The purpose of the "Burgers!!" app is to demonstrate the ability of this developer to produce a full-stack web-application served via an Express framework. The app is built according to the Model-View-Controller architecture of application development. 
 # What the app does 
 Users can provide a burger name, it will be written to a mySQL database indicating that the burger is ready to be eaten. The controller of the app will route requests to: 
  
