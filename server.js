@@ -14,9 +14,13 @@ app.use(bodyParser.json());
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-app.get('/', function (req, res) {
-    res.render('index');
-});
+// app.get('/', function (req, res) {
+//     res.render('index');
+// });
+
+var routes = require("./controllers/burgers_controller.js")
+
+app.use(routes);
 
 // Start listening on PORT
 app.listen(PORT, function () {

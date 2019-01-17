@@ -2,7 +2,7 @@
 <h1>Eat-Da-Burger!</h1>
 
 
-<form class="create-form">
+<form class="create-form" action="/api/burgers" method="post">
 
     <div class="form-group">
 
@@ -10,6 +10,9 @@
         <input type="text" id="ca" name="name">
         <button type="submit">Add a Burger</button>
         <p>Enter a burger you want to eat Click "Add a Burger" button.</p>
+        {{#each burger_data}}
+        <h1>{{this.burger_name}}</h1>
+        {{/each}}
     </div>
 
 

@@ -3,7 +3,8 @@ var connection = mysql.createConnection({
     host: "127.0.0.1",
     port: 3306,
     user: "root",
-    password: "password"
+    password: "password",
+    database: "burgers_db"
 });
 
 connection.connect(
@@ -17,6 +18,6 @@ connection.connect(
     }
 );
 
-modules.export = connection;
+module.exports = connection;
 //require this inside orm
 
