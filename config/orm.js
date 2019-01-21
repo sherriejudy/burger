@@ -39,19 +39,24 @@ var orm = {
 
         });
     },
-    updateOne: function (burgerName, devoured) {
+    updateOne: function (burgerName, devoured, cb) {
         var queryString =
             "UPDATE table_name SET burgerName = ?, devoured = ?, WHERE condition;";
 
         var query = connection.query(
             queryString,
-            [burgerName, devoured],
+            [burgerName, devoured, cb],
             function (err, result) {
-                if (err) throw err;
+                if (err) {
+                    console.log(err);
+                    throw err;
+                } else {
 
-                console.log("BASE QUERY3:", queryString);
-                console.log("BUILT QUERY3:", query.sql);
-                console.log("QUERY RESULT3:", result);
+                    console.log("BASE QUERY3:", queryString);
+                    console.log("BUILT QUERY3:", query.sql);
+                    console.log("QUERY RESULT3:", result);
+                    cb(result);
+                }
             }
         );
     }
