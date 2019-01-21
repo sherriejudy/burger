@@ -40,25 +40,30 @@ var orm = {
         });
     },
     updateOne: function (burgerName, devoured, cb) {
-        var queryString =
-            "UPDATE table_name SET burgerName = ?, devoured = ?, WHERE condition;";
+        var query = 'UPDATE ' + table + ' SET ' + column + ' = ? WHERE id = ?';
+        connection.query(query, [burgerName, devoured, cb], function (error, result) {
+            if (err) throw err;
+            cb(result);
+        });
+        // var queryString =
+        //     "UPDATE table_name SET burgerName = ?, devoured = ?, WHERE condition;";
 
-        var query = connection.query(
-            queryString,
-            [burgerName, devoured, cb],
-            function (err, result) {
-                if (err) {
-                    console.log(err);
-                    throw err;
-                } else {
+        // var query = connection.query(
+        //     queryString,
+        //     [burgerName, devoured, cb],
+        //     function (err, result) {
+        //         if (err) {
+        //             console.log(err);
+        //             throw err;
+        //         } else {
 
-                    console.log("BASE QUERY3:", queryString);
-                    console.log("BUILT QUERY3:", query.sql);
-                    console.log("QUERY RESULT3:", result);
-                    cb(result);
-                }
-            }
-        );
+        //             console.log("BASE QUERY3:", queryString);
+        //             console.log("BUILT QUERY3:", query.sql);
+        //             console.log("QUERY RESULT3:", result);
+        //             cb(result);
+        //         }
+        //     }
+        // );
     }
 };
 
