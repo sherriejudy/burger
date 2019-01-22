@@ -39,11 +39,12 @@ var orm = {
 
         });
     },
-    updateOne: function (burgerName, devoured, cb) {
-        var query = 'UPDATE ' + table + ' SET ' + column + ' = ? WHERE id = ?';
-        connection.query(query, [burgerName, devoured, cb], function (error, result) {
+    updateOne: function (condition, id, cb) {
+        var query = "UPDATE burgers SET devoured = 1 WHERE id = ?";
+        connection.query(query, [id], function (err, result) {
             if (err) throw err;
             cb(result);
+            console.log(query);
         });
         // var queryString =
         //     "UPDATE table_name SET burgerName = ?, devoured = ?, WHERE condition;";
